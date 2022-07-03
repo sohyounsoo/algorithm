@@ -6,8 +6,8 @@ public class 에라토스테네스_체_5 {
 
 	public int solution(int n) {
 		int answer = 0;
-		
 		int[] ch = new int[n+1];
+		
 		for(int i=2; i<=n; i++) {
 			if(ch[i] == 0) {
 				answer++;
