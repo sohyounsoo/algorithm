@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -13,22 +14,50 @@ import java.util.Scanner;
  */
 public class 뒤집은_소수_6 {
 	
-	public int solution(int n) {
-		int answer = 0;
+	public boolean isPrime(int answer) {
 		
-		return answer;
+		if(answer == 1) {
+			return false;
+		}
+		for(int i=2; i<answer; i++) {
+			if(answer % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public ArrayList<Integer> solution(int n, int[] arr) {
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		for(int x : arr) {
+			int answer = 0;
+			int tmp = 0;
+			while(x > 0) {
+				tmp = x % 10;
+				x = x / 10;
+				answer = answer * 10 + tmp;
+			}
+			if(isPrime(answer)) {
+				list.add(answer);
+			}
+		}
+		
+		return list;
 	}
 
 	public static void main(String[] args) {
 		뒤집은_소수_6 T = new 뒤집은_소수_6();
 		Scanner sc = new Scanner(System.in);
-		
 		int n = sc.nextInt();
 		int[] arr = new int[n];
 		
 		for(int i=0; i<n; i++) {
 			arr[i] = sc.nextInt();
 		}
+		
+		for(int x : T.solution(n, arr)) {
+			System.out.println(x);
+		}
 	}
-
 }
