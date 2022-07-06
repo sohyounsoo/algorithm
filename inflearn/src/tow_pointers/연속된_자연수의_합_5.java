@@ -13,25 +13,31 @@ package tow_pointers;
 
 import java.util.Scanner;
 
-public class 연속된_자연수의_합 {
+public class 연속된_자연수의_합_5 {
 
-	public int solution(int n, int k, int[]arr) { // time 에러
-		int answer = 0;
+	public int solution(int n) { // time 에러
+		int answer = 0, sum = 0, lt = 0;
+		int m = n/2+1;
+		int[] arr = new int[m];
+		
+		for(int i=0; i<m; i++) arr[i] = i+1;
+		for(int rt=0; rt<m; rt++) {
+			sum += arr[rt];
+			if(sum == n) answer++;
+			while(sum >= n) {
+				sum -= arr[lt++];
+				if(sum == n) answer++;
+			}
+		}
+		
 		
 		return answer;
 	}
 
 	public static void main(String[] args) {
-		연속된_자연수의_합 T = new 연속된_자연수의_합();
+		연속된_자연수의_합_5 T = new 연속된_자연수의_합_5();
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int k = sc.nextInt();
-		int[] arr = new int[n];
-		
-		for(int i=0; i<n; i++) {
-			arr[i] = sc.nextInt();
-		}
-		
-		System.out.println(T.solution(n, k, arr));
+		System.out.println(T.solution(n));
 	}
 }
