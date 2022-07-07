@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class 연속된_자연수의_합_5 {
 
-	public int solution(int n) { // time 에러
+	public int solution(int n) {
 		int answer = 0, sum = 0, lt = 0;
 		int m = n/2+1;
 		int[] arr = new int[m];
@@ -29,8 +29,6 @@ public class 연속된_자연수의_합_5 {
 				if(sum == n) answer++;
 			}
 		}
-		
-		
 		return answer;
 	}
 
