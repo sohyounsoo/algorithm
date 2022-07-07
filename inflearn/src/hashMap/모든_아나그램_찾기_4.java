@@ -34,8 +34,6 @@ public class 모든_아나그램_찾기_4 {
 			lt++;
 		}
 		
-		
-		
 		return answer;
 	}
 
