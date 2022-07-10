@@ -5,8 +5,8 @@ import java.util.Stack;
 
 public class 인형뽑기_3 {
 
-	public String solution(int n, int[][] arr, int k, int[] move) {
-		String answer = "";
+	public int solution(int n, int[][] arr, int k, int[] move) {
+		int answer = 0;
 		Stack<Integer> st = new Stack<>();
 		
 		int a = 0;
@@ -14,8 +14,15 @@ public class 인형뽑기_3 {
 			a = move[i];
 			for(int j=0; j<n; j++) {
 				if(arr[j][a-1] != 0) {
-					st.push(arr[j][a-1]);
+					int tmp = arr[j][a-1];
 					arr[j][a-1] = 0;
+					if(!st.isEmpty() && tmp == st.peek()) {
+						st.pop();
+						answer +=2;
+					}else {
+						st.push(tmp);
+					}
+					break;
 				}
 			}
 		}
