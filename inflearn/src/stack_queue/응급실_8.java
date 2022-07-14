@@ -56,15 +56,11 @@ public class 응급실_8 {
 				}
 			}
 			
-			if(!q.isEmpty()) {
+			if(tmp != null) {
 				answer++;
-				if(tmp.id == m) {
-					return answer;
-				}
-				
+				if(tmp.id == m) return answer;
 			}
 		}
-		
 		return answer;
 	}
 
