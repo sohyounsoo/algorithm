@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class 중복확인 {
 
-	public String solution(int n, int[] arr) {
+	public String solution(int n, int[] arr) { // 시간 초과
 		String answer = "U";
 		
 		for(int i=0; i<n-1; i++) {
@@ -13,7 +13,6 @@ public class 중복확인 {
 				if(arr[i] == arr[j]) answer = "D";
 			}
 		}
-		
 		return answer;
 	}
 	
@@ -25,7 +24,6 @@ public class 중복확인 {
 				answer = "D";
 			}
 		}
-		
 		return answer;
 	}
 
