@@ -12,9 +12,10 @@ public class 재귀함수2 {
 	public void DFS(int n) {
 		if(n == 0) return;
 		else {
-			DFS(n / 2);
+			
 			int tmp = n % 2;
-			System.out.print(tmp);
+			System.out.println(tmp);
+			DFS(n / 2);
 		}
 	}
 	
