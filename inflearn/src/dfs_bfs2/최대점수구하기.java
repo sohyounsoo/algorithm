@@ -37,10 +37,10 @@ public class 최대점수구하기 {
 	public static void main(String[] args) {
 		최대점수구하기 T = new 최대점수구하기();
 		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		m = sc.nextInt();
-		int[] a= new int[n];
-		int[] b= new int[n];
+		n = sc.nextInt(); // 시험 갯수
+		m = sc.nextInt(); // 제한시간
+		int[] a = new int[n]; // 시험점수
+		int[] b = new int[n]; // 시험시간
 		for(int i=0; i<n; i++) {
 			a[i] = sc.nextInt();
 			b[i] = sc.nextInt();
