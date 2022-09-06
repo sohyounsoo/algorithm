@@ -4,7 +4,7 @@
 
 package dfs_bfs;
 
-public class 말단노드 {
+public class 말단노드 { // dfs 깊이탐색
 	Node root;
 	public int DFS(int L, Node root) {
 		if(root.lt == null && root.rt == null) return L;

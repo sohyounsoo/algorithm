@@ -1,5 +1,5 @@
 /*
- 이문제는 사실 레벨 탐색 즉 최단거리는 레벨탐색이 맞지만 깊이우선탐색으로 풀어봄
+ 이문제는 사실 레벨 탐색 즉 최단거리는 레벨탐색
  */
 
 package dfs_bfs;
@@ -7,7 +7,7 @@ package dfs_bfs;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class 말단노드2 {
+public class 말단노드2 { // bfs 레벨탐색
 	Node root;
 	public int BFS(Node root) {
 		Queue<Node> q = new LinkedList<Node>();
