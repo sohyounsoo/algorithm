@@ -11,14 +11,6 @@ import java.util.Scanner;
 
 class 미로최단거리통로 {
 	
-	class Point{
-		public int x, y;
-		Point(int x , int y) {
-			this.x = x;
-			this.y = y;
-		}
-	}
-	
 	static int[] dx = {-1, 0, 1, 0};
 	static int[] dy = {0, 1, 0, -1};
 	static int[][] board, dis;
