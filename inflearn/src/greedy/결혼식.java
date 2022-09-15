@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 class Marry implements Comparable<Marry>{
 	public int time, state;
-	Marry(int time, int state) {
+	Marry(int time, char state) {
 		this.time = time;
 		this.state = state;
 	}
@@ -32,14 +32,15 @@ class Marry implements Comparable<Marry>{
 
 public class 결혼식 {
 	
-	public int solution(ArrayList<Marry> arr, int n) {
+	public int solution(ArrayList<Marry> arr) {
 		int answer = Integer.MIN_VALUE;
-		
 		Collections.sort(arr);
-		
 		int cnt = 0;
-		for(Marry t : arr) {
-
+		
+		for(Marry o : arr) {
+			if(o.state == 's') cnt++;
+			else cnt--;
+			answer = Math.max(answer, cnt);
 		}
 		
 		return answer;
@@ -50,13 +51,15 @@ public class 결혼식 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		ArrayList<Marry> arr = new ArrayList<>();
+		
 		for(int i=0; i<n; i++) {
 			int s = sc.nextInt();
 			int e = sc.nextInt();
 			arr.add(new Marry(s, 's'));
 			arr.add(new Marry(e, 'e'));
 		}
-		System.out.println(T.solution(arr, n));
+		
+		System.out.println(T.solution(arr));
 
 	}
 
