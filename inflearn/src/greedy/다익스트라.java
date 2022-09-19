@@ -92,7 +92,5 @@ public class 다익스트라 {
 			if(dis[i] != Integer.MAX_VALUE) System.out.println(i + " : " + dis[i]);
 			else System.out.println(i + " : impossible");
 		}
-		
-
 	}
 }
