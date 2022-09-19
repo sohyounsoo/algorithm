@@ -1,3 +1,23 @@
+/*
+입력:
+9 12
+1 2 12
+1 9 25
+2 3 10
+2 8 17
+2 9 8
+3 4 18
+3 7 55
+4 5 44
+5 6 60
+5 7 38
+7 8 35
+8 9 15
+
+출력:
+196
+ */
+
 package greedy;
 
 import java.util.ArrayList;
@@ -54,7 +74,7 @@ public class 원더랜드 {
 		int cnt = 0;
 		Collections.sort(arr);
 		for(Edge2 ob : arr) {
-			if(cnt != n-1) { // 트리가 완성되면 종료
+			if(cnt == n-1) break;
 				int fv1 = Find(ob.v1);
 				int fv2 = Find(ob.v2);
 				if(fv1 != fv2) {
@@ -62,7 +82,7 @@ public class 원더랜드 {
 					Union(ob.v1, ob.v2);
 					cnt++; // 간선개수
 				}
-			}
+			
 		}
 		
 		System.out.println(answer);
