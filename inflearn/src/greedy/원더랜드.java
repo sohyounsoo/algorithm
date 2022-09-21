@@ -82,9 +82,7 @@ public class 원더랜드 {
 					Union(ob.v1, ob.v2);
 					cnt++; // 간선개수
 				}
-			
 		}
-		
 		System.out.println(answer);
 
 	}
