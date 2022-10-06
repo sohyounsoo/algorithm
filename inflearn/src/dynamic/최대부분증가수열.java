@@ -19,7 +19,7 @@ public class 최대부분증가수열 {
 		for(int i=1; i<arr.length; i++) {
 			int max = 0;
 			for(int j=i-1; j>=0; j--) {
-				if(arr[j] < arr[i] && dy[j] > max) max=dy[j];
+				if(arr[j] < arr[i] && dy[j] > max) max = dy[j];
 			}
 			dy[i] = max + 1;
 			answer = Math.max(answer, dy[i]);
@@ -37,7 +37,6 @@ public class 최대부분증가수열 {
 			arr[i] = sc.nextInt();
 		}
 		System.out.println(T.solution(arr));
-
 	}
 
 }
