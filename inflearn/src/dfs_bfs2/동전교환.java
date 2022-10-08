@@ -33,7 +33,9 @@ public class 동전교환 {
 	
 	public static void DFS(int L, int sum, Integer[] arr) {
 		if(sum > m) return;
-		if(L>=answer) return;
+		
+		if(L >= answer) return;
+		
 		if(sum == m) {
 			answer = Math.min(answer, L);
 		}else {
