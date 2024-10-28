@@ -9,13 +9,22 @@ public class 문자찾기 {
 		// 둘다 대문자로 변환
 		str = str.toUpperCase();
 		t = Character.toUpperCase(t);
-		String tt = String.valueOf(t);
-		
-		String[] split = str.split("");
-    
-		for(String s : split) {
-			if(s.equals(tt)) answer++;
-		}    
+
+		// 둘다 대문자로 변환
+		str = str.toUpperCase();
+		t = Character.toUpperCase(t);
+
+		for (char x : str.toCharArray()) {
+			if(x==t) answer++;
+		}
+
+//		String tt = String.valueOf(t);
+//		String[] split = str.split("");
+//
+//		for(String s : split) {
+//			if (s.equals(tt)) answer++;
+//		}
+
 		return answer;
 }
 		  
@@ -23,11 +32,11 @@ public class 문자찾기 {
 		문자찾기 T = new 문자찾기();
 		Scanner kb = new Scanner(System.in);
     
-//		String str = kb.next();
-//		char c = kb.next().charAt(0);
+		String str = kb.next();
+		char c = kb.next().charAt(0);
 
-		String str = "Computercooler";
-		char c = 'c';
+//		String str = "Computercooler";
+//		char c = 'c';
     
 		System.out.print(T.solution(str, c));
 	}
