@@ -5,6 +5,27 @@ import java.util.Scanner;
 
 public class 단어_뒤집기 {
 
+	public static void main(String[] args) {
+		단어_뒤집기 T = new 단어_뒤집기();
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		String[] str = new String[n];
+
+		for(int i=0; i < str.length; i++) {
+			str[i] = sc.next();
+		}
+
+		for(String x : T.solution2(n, str)) {
+			System.out.println(x);
+		}
+
+//		for(String x : T.solution3(n, str)) {
+//			System.out.println(x);
+//		}
+
+	}
+
 	public ArrayList<String> solution(int n, String[] str) {
 		ArrayList<String> answer = new ArrayList<>();
 		for(String x : str) {
@@ -17,20 +38,23 @@ public class 단어_뒤집기 {
 	
 	public ArrayList<String> solution2(int n, String[] str) {
 		ArrayList<String> answer = new ArrayList<>();
-		String tem = "";
-		
+
 		for(int i = 0; i<str.length; i++) {
-			String[] s = str[i].split("");
-			for(int j = s.length - 1; j >= 0; j --) {
-				tem += s[j];
+			char[] s = str[i].toCharArray();
+			int len = str[i].length();
+
+			for (int j = 0; j < len / 2; j++) {
+				char tmp = s[j];
+				s[j] = s[len-j-1];
+				s[len-j-1] = tmp;
 			}
-			answer.add(tem);
-			tem = "";
+			answer.add(String.valueOf(s));
 		}
 		
 		return answer;
 	}
-	
+
+	// 시간 복잡도 o(n)
 	public ArrayList<String> solution3(int n, String[] str) {
 		ArrayList<String> answer = new ArrayList<>();
 		
@@ -48,23 +72,6 @@ public class 단어_뒤집기 {
 			answer.add(temp);
 		}
 		return answer;
-	}
-	
-	public static void main(String[] args) {
-		단어_뒤집기 T = new 단어_뒤집기();
-		
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		String[] str = new String[n];
-		
-		for(int i=0; i < str.length; i++) {
-			str[i] = sc.next();
-		}
-		
-		for(String x : T.solution3(n, str)) {
-			System.out.println(x);
-		}
-
 	}
 
 }

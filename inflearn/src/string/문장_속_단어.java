@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class 문장_속_단어 {	
 	public String solution(String str) {
 		String answer = "";
-		int m = 0;
+		int max = 0;
 		
 		String[] s = str.split(" ");
 		
 		for(String x : s) {
 			int len = x.length();
-			if(len > m) {
-				m = len;
+			if(len > max) {
+				max = len;
 				answer = x;
 			}
 		}
