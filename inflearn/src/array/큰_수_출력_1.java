@@ -3,7 +3,7 @@
 	(첫 번째 수는 무조건 출력한다)
 	
 	입력 :6
-		7 3 9 5 6 12
+		 7 3 9 5 6 12
 	출력 :7 9 6 12
 */
 
@@ -39,7 +39,7 @@ public class 큰_수_출력_1 {
 		}
 	
 		for(int x : T.solution(n, arr)) {
-			System.out.println(x + " ");
+			System.out.print(x + " ");
 		}
 	}
 }
