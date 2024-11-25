@@ -31,6 +31,19 @@ public class 가위_바위_보_3 {
 		return answer;
 	}
 
+	public String[] solution2(int[] a, int[] b) {
+		String[] answer = new String[a.length];
+
+		for (int i = 0; i < a.length; i++) {
+			int result = (a[i] - b[i] + 3) % 3;
+			if (result == 0) answer[i] = "D"; // 무승부
+			else if (result == 1) answer[i] = "A"; // A 승리
+			else answer[i] = "B"; // B 승리
+		}
+
+		return answer;
+	}
+
 	public static void main(String[] args) {
 		가위_바위_보_3 T = new 가위_바위_보_3();
 		Scanner sc = new Scanner(System.in);
@@ -50,10 +63,6 @@ public class 가위_바위_보_3 {
 		for(String s : T.solution(a, b)) {
 			System.out.println(s);
 		}
-//		for(char x : T.solution(a, b).toCharArray()){
-//			System.out.println(x);
-//		}
-		
 
 	}
 
