@@ -29,7 +29,7 @@ public class 피보나치_수열_4 {
 	
 	public static void main(String[] args) {
 		피보나치_수열_4 T = new 피보나치_수열_4();
-		
+
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		
