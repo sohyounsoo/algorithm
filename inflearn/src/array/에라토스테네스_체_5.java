@@ -11,10 +11,29 @@ public class 에라토스테네스_체_5 {
 		for(int i=2; i<=n; i++) {
 			if(ch[i] == 0) {
 				answer++;
-				for(int j=i; j<=n; j=j+i) ch[j] = 1;
+				for(int j=i; j<=n; j=j+i) {
+					ch[j] = 1;
+				}
 			}
 		}
 		
+		return answer;
+	}
+
+	public int solution2(int n) {
+		int answer = 0;
+		boolean isPrime;
+
+		if(n < 2) return answer;
+
+		for(int i=2; i<=n; i++) {
+			isPrime = false;
+			for(int j=2; j<i; j++) {
+				if(i % j == 0) isPrime = true;
+			}
+			if(!isPrime) answer++;
+		}
+
 		return answer;
 	}
 	
@@ -24,6 +43,7 @@ public class 에라토스테네스_체_5 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		System.out.println(T.solution(n));
+		System.out.println(T.solution2(n));
 	}
 
 }
