@@ -6,13 +6,13 @@ public class 에라토스테네스_체_5 {
 
 	public int solution(int n) {
 		int answer = 0;
-		int[] ch = new int[n+1];
+		boolean[] ch = new boolean[n + 1];
 		
 		for(int i=2; i<=n; i++) {
-			if(ch[i] == 0) {
+			if(!ch[i]) { // 2부터 시작
 				answer++;
-				for(int j=i; j<=n; j=j+i) {
-					ch[j] = 1;
+				for(int j= i*i; j<=n; j+=i) {
+					ch[j] = true;
 				}
 			}
 		}
@@ -28,7 +28,7 @@ public class 에라토스테네스_체_5 {
 
 		for(int i=2; i<=n; i++) {
 			isPrime = false;
-			for(int j=2; j<i; j++) {
+			for(int j=2; j*j<=i; j++) {
 				if(i % j == 0) isPrime = true;
 			}
 			if(!isPrime) answer++;
